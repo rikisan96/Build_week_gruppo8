@@ -19,6 +19,7 @@ body {
     max-width: 20%;
     display: inline-block;
     width: 20%;
+    margin-top: 5%;
 
 
 }
@@ -26,6 +27,8 @@ body {
 .destra {
     text-align: right;
     align-items: center; /* da sostituire con timer */
+    padding: 0;
+    margin: 0;
 }
 
 
