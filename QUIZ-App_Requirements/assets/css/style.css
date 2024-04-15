@@ -1,13 +1,37 @@
 body {
-    background-image: url(../QUIZ-App_Requirements/assets/bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url(../bg.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Inter', sans-serif;
+    height: 100vh;
+}
+
+#epi_logo {
+    text-align: left;
+}
+
+
+#epi_logo img {
+    max-width: 20%;
+    display: inline-block;
+    width: 20%;
+
 
 }
 
+.destra {
+    text-align: right;
+    align-items: center; /* da sostituire con timer */
+}
+
+
+.contenitore_sito {
+    text-align: center;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
