@@ -58,6 +58,12 @@ section h3 {
     margin: 0;
 }
 
+.centrato{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1 .sinistra {
     text-align: left;
 }
