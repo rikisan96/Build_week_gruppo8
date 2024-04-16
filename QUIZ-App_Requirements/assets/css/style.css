@@ -80,13 +80,20 @@ h1 .sinistra {
 }
 
 /* BENCHMARK PAGE */
-#timer{
+#bordo_esterno{
     display: block;
     float: right;
     color: white;
-    border: 1px solid white;
+    border: 3px solid white;
     width: 10%;
     height: 120px;
+    border-radius: 50%;
+}
+#bordo_interno{
+    text-align: center;
+    border: 3px solid white;
+    height: 100px;
+    border-radius: 50%;
 }
 #form_domande{
     margin-top: 200px;
