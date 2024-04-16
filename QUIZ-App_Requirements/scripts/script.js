@@ -118,7 +118,8 @@ const questions = [
     },
   ];
 
-const numeroDomande = prompt()
+  /*
+const numeroDomande = prompt()*/
 
 
 function generateQuestion(){
