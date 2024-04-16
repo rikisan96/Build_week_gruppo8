@@ -1,12 +1,18 @@
 const timer=function(){
-    const sec=60;
+    var i=59;
 
     text=document.querySelector("#secondi_rimanenti p");
 
-    text.innerHTML=sec;
 
     setInterval(function(){
-        text.innerHTML=sec;
+        if(i>0){
+            text.innerHTML=i;
+        }else if(i==0){
+            text.innerHTML="boom";
+        }else{
+            clearInterval();
+        }
+        i--;
     }, 1000)
 }
 
