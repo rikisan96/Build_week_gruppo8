@@ -87,7 +87,7 @@ h1 .sinistra {
     width: 15px; 
     height: 15px; 
     border: 1px solid white;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Utilizza rgba invece di rgb */
 }
 
 .start .checkbox:checked {
@@ -139,6 +139,12 @@ h1 .sinistra {
     margin-top: 200px;
 }
 
+* :not(*:not(#results)) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 header .container  img {
     text-align: left;
 }
@@ -163,17 +169,32 @@ header h1, header h2 {
     color: white; 
 }
 
-#Circular_progress_bar {
+.Circular_progress_bar {
+    width: 400px; 
+    height: 400px; 
     position: relative;
-    height: 20vw; /* Altezza del cerchio */
-    width: 20vw; /* Larghezza del cerchio */
-    border: 1px solid;
-    border-radius: 50%; /* Bordi arrotondati per rendere un cerchio */
-    color: rgb(255, 255, 255);
+    margin: auto; 
+}
+
+.outer {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; /* Sfondo trasparente */
+}
+
+.inner {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15), 
+    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.7),
+    -0.5px -0.5px 0px rgb(0, 0, 0), 
+    0.5px 0.5px 0px rgb(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 #results h3,
@@ -192,6 +213,8 @@ header h1, header h2 {
 #proceed_bench{
     float: right;
 }
+}
+
 #results p {
     top: 60%; /* Posizione verticale */
     transform: rotate(90deg); /* Ruota il testo per seguirne il perimetro del cerchio */
