@@ -33,6 +33,10 @@ h1 {
     margin-top: 8%;
     text-align:justify; 
 }
+    margin: 0;
+    margin-top: 3%;
+    text-align: center;
+    }
 
 h3 {
     font-size: 1.5em;
@@ -95,6 +99,7 @@ h1 .sinistra {
     box-shadow: 0px 0px 20px 10px #12e1eb;
     font-size: 1.3em;
     padding: 1em 3em;
+    font-weight: 700;
     text-align: center;
     cursor: pointer;
     padding-bottom: 30px;
