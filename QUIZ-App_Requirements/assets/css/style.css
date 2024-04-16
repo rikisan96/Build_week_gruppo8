@@ -139,9 +139,13 @@ h1 .sinistra {
     margin-top: 200px;
 }
 
+header .container  img {
+    text-align: left;
+}
+/*
 header {
     text-align: center; 
-}
+}*/
 
 header h1 {
     font-size: 3em;
@@ -192,4 +196,5 @@ header h1, header h2 {
     top: 60%; /* Posizione verticale */
     transform: rotate(90deg); /* Ruota il testo per seguirne il perimetro del cerchio */
 }
-/* PROVA */
+
+/* TIMER */
