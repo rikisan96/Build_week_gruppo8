@@ -114,6 +114,25 @@ h1 .sinistra {
     margin-top: 5%;
 }
 
+/* BENCHMARK PAGE */
+#bordo_esterno{
+    display: block;
+    float: right;
+    color: white;
+    border: 3px solid white;
+    width: 10%;
+    height: 120px;
+    border-radius: 50%;
+}
+#bordo_interno{
+    border: 3px solid white;
+    height: 100px;
+    border-radius: 50%;
+}
+#form_domande{
+    margin-top: 200px;
+}
+
 header {
     text-align: center; 
 }
@@ -160,6 +179,8 @@ header h1, header h2 {
     top: 40%; /* Posizione verticale */
     transform: translateX(-50%) translateY(-50%); /* Posiziona al centro del cerchio */
 }
+#proceed_bench{
+    float: right;
 
 #results p {
     top: 60%; /* Posizione verticale */
