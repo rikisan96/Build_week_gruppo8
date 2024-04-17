@@ -139,12 +139,6 @@ h1 .sinistra {
     margin-top: 200px;
 }
 
-* :not(*:not(#results)) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 header .container  img {
     text-align: left;
 }
@@ -177,8 +171,8 @@ header h1, header h2 {
 }
 
 .outer {
-    width: 300px;
-    height: 300px;
+    width: 300px; 
+    height: 300px; 
     padding: 20px;
     border-radius: 50%;
     box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15);
@@ -197,6 +191,25 @@ header h1, header h2 {
     0.5px 0.5px 0px rgb(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
+.Circular_progress_bar::before {
+    content: "";
+    position: absolute;
+    width: 350px; 
+    height: 350px;
+    background-image: radial-gradient(transparent 0% 47%,  #D20094 50%);
+    border-radius: 50%;
+}
+
+/*.Circular_progress_bar::after {
+    top: 0;
+    content: "";
+    position: absolute;                 MAYBE?
+    width: 350px; 
+    height: 350px;
+    background-image: radial-gradient(transparent 0% 47%, #00bbff 50%);
+    border-radius: 50%;
+}*/                            
+
 #results h3,
 #results p {
     position: absolute;
@@ -213,12 +226,13 @@ header h1, header h2 {
 #proceed_bench{
     float: right;
 }
-}
+
 
 #results p {
     top: 60%; /* Posizione verticale */
     transform: rotate(90deg); /* Ruota il testo per seguirne il perimetro del cerchio */
 }
+
 /* PROVA */
 /* css della pagina feedback*/
 /*#epi_logo img
@@ -291,6 +305,7 @@ font-size: 16px;
 background-color: #76dde0;
 
 }
+
 .tratto{
 align-items: center;
 color: red;
