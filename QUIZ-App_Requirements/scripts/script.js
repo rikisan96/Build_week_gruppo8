@@ -155,5 +155,5 @@ const timer=function(){
 
 timer();
 
-
+//-----------BARRA DI AVANZAMENTO-------------//
 
