@@ -142,47 +142,40 @@ const timer=function(){
 timer();
 
 //-------------------QUIZ----------------------//
-var punteggio = 0;
-function showQuestion(index) {
-  var questionContainer = document.getElementById("form_domande");
-  var questionHTML = "<h3>" + questions[index].question + "</h3>";
-  questionContainer.innerHTML = questionHTML;
 
-  var answerContainer = document.getElementById("risposte");
-  var answersHTML = "";
-  for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
-      answersHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
-  }
-  answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
-  answerContainer.innerHTML = answersHTML;
+function domande (x) {
+  var form = document.getElementById("form_domande");
+  var domanda = `<h3>${questions[x].question}</h3>`
+  form.innerHTML = domanda;
+  
+  
+  var form_risposte = document.getElementById("risposte");
+  var risposte = `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
+  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button><br>
+  <button class="bottoneRisposte">${questions[x].incorrect_answers[2]}</button>
+  <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
+  
+  form_risposte.innerHTML = risposte
 
   let num_domanda = document.querySelector(".centrato");
-  let text = `<p>QUESTION ${index+1}<span id="numeroDomande">/${questions.length}</span></p>`;
+  let text = `<p>QUESTION ${x+1}<span id="numeroDomande">/${questions.length}</span></p>`;
   num_domanda.innerHTML = text;
 }
 
-var currentQuestionIndex = 0;
+window.onload = function() {
+  let i = 1;
+  let btn_procedi = document.querySelector(".next");
+  domande(i-1)
+  btn_procedi.addEventListener("click", function(){ 
+    domande(i)
+    i++
+  });
 
-function handleAnswerClick() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-      showQuestion(currentQuestionIndex);
-      var cliccato = questions[currentQuestionIndex].incorrect_answers;
-  } else {
-      alert("Hai completato il quiz!");
-  }
+  const numeroCorrente = document.querySelector("footer p #numeroCorrente")
+  const numeroDomande = document.querySelector("footer p #numeroDomande")
+  numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
 }
 
-document.getElementById("risposte").addEventListener("click", function () {
-  handleAnswerClick()
-  punteggio ()
-});
-
-showQuestion(currentQuestionIndex);
-
-function punteggio () {
-  if (questions[i].correct_answer === )
-} 
 
 
 
