@@ -124,7 +124,7 @@ const questions = [
 const timer=function(){
     var i=59;
 
-    text=document.querySelector("#secondi_rimanenti");
+    text=document.querySelector("#secondi_rimanenti p");
 
 
     setInterval(function(){
@@ -142,7 +142,7 @@ const timer=function(){
 timer();
 
 //-------------------QUIZ----------------------//
-
+var punteggio = 0;
 function showQuestion(index) {
   var questionContainer = document.getElementById("form_domande");
   var questionHTML = "<h3>" + questions[index].question + "</h3>";
@@ -167,14 +167,22 @@ function handleAnswerClick() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
       showQuestion(currentQuestionIndex);
+      var cliccato = questions[currentQuestionIndex].incorrect_answers;
   } else {
       alert("Hai completato il quiz!");
   }
 }
 
-document.getElementById("risposte").addEventListener("click", handleAnswerClick);
+document.getElementById("risposte").addEventListener("click", function () {
+  handleAnswerClick()
+  punteggio ()
+});
 
 showQuestion(currentQuestionIndex);
+
+function punteggio () {
+  if (questions[i].correct_answer === )
+} 
 
 
 
