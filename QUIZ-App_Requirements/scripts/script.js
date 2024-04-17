@@ -119,11 +119,8 @@ const questions = [
   ];
 
 const timer=function(){
-    var i=59;
-
+    var i=60;
     text=document.querySelector("#secondi_rimanenti p");
-
-
     setInterval(function(){
         if( i > 0 ){
             text.innerHTML=i;
@@ -136,7 +133,7 @@ const timer=function(){
     }, 1000)
 }
 
-// timer();
+timer();
 
 //-------------------QUIZ----------------------//
 var punteggio = 0;
@@ -145,29 +142,6 @@ function showQuestion(index) {
   var questionHTML = "<h3>" + questions[index].question + "</h3>";
   questionContainer.innerHTML = questionHTML;
 
-<<<<<<< HEAD
-function verificaProp(x) {
-  if(correct_answer in x){
-    console.log("la risposta e' corretta")
-  }else {console.log(`risp errata RIPPINO`)}
-}
-
-function domande (x) {
-  var form = document.getElementById("form_domande");
-  var domanda = `<h3>${questions[x].question}</h3>` 
-  form.innerHTML = domanda;
-  const ordineRisposte = [shuffle()]
-  
-  var form_risposte = document.getElementById("risposte");
-  var risposte =
-  `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
-  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button>
-  <br>
-  <button class="bottoneRisposte">${questions[x].incorrect_answers[2]}</button>
-  <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
-  
-  form_risposte.innerHTML = risposte
-=======
   var answerContainer = document.getElementById("risposte");
   var answersHTML = "";
   for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
@@ -175,33 +149,12 @@ function domande (x) {
   }
   answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
   answerContainer.innerHTML = answersHTML;
->>>>>>> 7d55d2d6d81ff2ae4fbf178ae3a783b56f227f52
 
   let num_domanda = document.querySelector(".centrato");
-  let text = `<p>QUESTION ${index+1}<span id="numeroDomande">/${questions.length}</span></p>`;
+  let text = `<p>QUESTION ${index+1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
   num_domanda.innerHTML = text;
 }
 
-<<<<<<< HEAD
-  document.querySelector('form').addEventListener('submit', function(event) { 
-  event.preventDefault();
-  })
-
-window.onload = function() {
-
-
-  let i = 1;
-  let btn_procedi = document.querySelector(".next");
-  domande(i-1)
-  btn_procedi.addEventListener("click", function(){ 
-    domande(i)
-    i++
-  });
-
-  // const numeroCorrente = document.querySelector("footer p #numeroCorrente")
-  // const numeroDomande = document.querySelector("footer p #numeroDomande")
-  // numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
-=======
 var currentQuestionIndex = 0;
 
 function handleAnswerClick() {
@@ -212,7 +165,6 @@ function handleAnswerClick() {
   } else {
       alert("Hai completato il quiz!");
   }
->>>>>>> 7d55d2d6d81ff2ae4fbf178ae3a783b56f227f52
 }
 
 document.getElementById("risposte").addEventListener("click", function () {
@@ -221,22 +173,6 @@ document.getElementById("risposte").addEventListener("click", function () {
 });
 
 showQuestion(currentQuestionIndex);
-
-function punteggio () {
-  if (questions[i].correct_answer === )
-} 
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 //-----------BARRA DI AVANZAMENTO-------------//
 
