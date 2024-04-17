@@ -180,12 +180,13 @@ function handleAnswerClick() {
       console.log("uncorrect")
     }
     
-
+    
+    console.log((punteggio/10)*100+"%")
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion(currentQuestionIndex);
     } else {
-        alert("Hai completato il quiz! Punteggio totale: " + punteggio);
+        alert("Hai completato il quiz! Punteggio totale: " + (punteggio/10)*100+"%");
     }
 }
 
