@@ -126,6 +126,24 @@ const questions = [
 
 var punteggio = 0;
 
+
+// Funzione del timer
+const timer = function () {
+  var i = 10;
+  var text = document.querySelector("#secondi_rimanenti p");
+
+  intervalId = setInterval(function () {
+      if (i >= 0) {
+          text.innerHTML = i;
+      } else {
+          clearInterval(intervalId);
+          text.innerHTML = "BOOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM!";
+      }
+      i--;            
+  }, 500);
+}
+
+
 function showQuestion(index) {
     var questionContainer = document.getElementById("form_domande");
     var questionHTML = "<h3>" + questions[index].question + "</h3>";
@@ -145,7 +163,7 @@ function showQuestion(index) {
 
     // Reset del timer ad ogni nuova domanda
     clearInterval(intervalId); // Interrompiamo l'intervallo precedente
-    timer(); // Avviamo il timer per la nuova domanda
+    timer();
 }
 
 var currentQuestionIndex = 0;
@@ -157,7 +175,11 @@ function handleAnswerClick() {
     
     if (selectedAnswer === correctAnswer) {
         punteggio++;
+        console.log("correct")
+    }else{
+      console.log("uncorrect")
     }
+    
 
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
@@ -167,25 +189,11 @@ function handleAnswerClick() {
     }
 }
 
-document.getElementById("risposte").addEventListener("click", handleAnswerClick);
+document.getElementById("risposte").addEventListener("click", function(){
+  handleAnswerClick();
+})
 
-// Funzione del timer
-const timer = function () {
-    var i = 60;
-    var text = document.querySelector("#secondi_rimanenti p");
 
-    intervalId = setInterval(function () {
-        if (i >= 0) {
-            text.innerHTML = i;
-        } else {
-            clearInterval(intervalId);
-            text.innerHTML = "Tempo scaduto!";
-        }
-        i--;            
-    }, 1000);
-}
-
-timer();
 showQuestion(currentQuestionIndex);
 
 
