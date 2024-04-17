@@ -119,18 +119,28 @@ const questions = [
   ];
 
   
-
-
-
-//-------------------QUIZ----------------------//
-
+//------------------- QUIZ ----------------------//
 var punteggio = 0;
+var indiceDomandaCorrente = 0;
+var intervalId; // Variabile per memorizzare l'ID dell'intervallo
 
+
+window.onload=function(){
+  mostraDomanda(indiceDomandaCorrente);
+  document.getElementById("risposte").addEventListener("click", function(){
+    rispostaAlClick();
+  })
+}
+
+
+/******** DICIHIARAZIONE FUNZIONI **********/
 
 // Funzione del timer
-const timer = function () {
-  var i = 10;
-  var text = document.querySelector("#secondi_rimanenti p");
+function timer() {
+  let i, text;
+
+  i = 10;
+  text = document.querySelector("#secondi_rimanenti p");
 
   intervalId = setInterval(function () {
       if (i >= 0) {
@@ -144,21 +154,25 @@ const timer = function () {
 }
 
 
-function showQuestion(index) {
-    var questionContainer = document.getElementById("form_domande");
-    var questionHTML = "<h3>" + questions[index].question + "</h3>";
-    questionContainer.innerHTML = questionHTML;
+// funzione mostra domanda nel box
+function mostraDomanda(index) {
+    let contenitoreDomanda, domandaHTML, coenitoreRisposta, rispostaHTML;
+    let num_domanda, text;
 
-    var answerContainer = document.getElementById("risposte");
-    var answersHTML = "";
-    for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
-        answersHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
+    contenitoreDomanda = document.getElementById("form_domande");
+    domandaHTML = "<h3>" + questions[index].question + "</h3>";
+    contenitoreDomanda.innerHTML = domandaHTML;
+    coenitoreRisposta = document.getElementById("risposte");
+    rispostaHTML = "";
+
+    for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
+      rispostaHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
     }
-    answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
-    answerContainer.innerHTML = answersHTML;
+    rispostaHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
+    coenitoreRisposta.innerHTML = rispostaHTML;
 
-    let num_domanda = document.querySelector(".centrato");
-    let text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
+    num_domanda = document.querySelector(".centrato");
+    text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
     num_domanda.innerHTML = text;
 
     // Reset del timer ad ogni nuova domanda
@@ -166,48 +180,26 @@ function showQuestion(index) {
     timer();
 }
 
-var currentQuestionIndex = 0;
-var intervalId; // Variabile per memorizzare l'ID dell'intervallo
+// funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
+function rispostaAlClick() {
+    let selezionaRispostaCliccata, rispostaCorretta;
 
-function handleAnswerClick() {
-    var selectedAnswer = event.target.innerText;
-    var correctAnswer = questions[currentQuestionIndex].correct_answer;
+    selezionaRispostaCliccata = event.target.innerText;
+    rispostaCorretta = questions[indiceDomandaCorrente].correct_answer;
     
-    if (selectedAnswer === correctAnswer) {
+    if (selezionaRispostaCliccata === rispostaCorretta) {
         punteggio++;
         console.log("correct")
     }else{
       console.log("uncorrect")
     }
     
-    
     console.log((punteggio/10)*100+"%")
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion(currentQuestionIndex);
+    indiceDomandaCorrente++;
+    if (indiceDomandaCorrente < questions.length) {
+      mostraDomanda(indiceDomandaCorrente);
     } else {
         alert("Hai completato il quiz! Punteggio totale: " + (punteggio/10)*100+"%");
     }
 }
-
-document.getElementById("risposte").addEventListener("click", function(){
-  handleAnswerClick();
-})
-
-
-showQuestion(currentQuestionIndex);
-
-
-
-
-
-
-
-
-
-
-
-
-
-//-----------BARRA DI AVANZAMENTO-------------//
 
