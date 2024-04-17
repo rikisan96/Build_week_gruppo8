@@ -118,9 +118,6 @@ const questions = [
     },
   ];
 
-  
-
-
 const timer=function(){
     var i=59;
 
@@ -139,19 +136,27 @@ const timer=function(){
     }, 1000)
 }
 
-timer();
+// timer();
 
 //-------------------QUIZ----------------------//
 
+function verificaProp(x) {
+  if(correct_answer in x){
+    console.log("la risposta e' corretta")
+  }else {console.log(`risp errata RIPPINO`)}
+}
+
 function domande (x) {
   var form = document.getElementById("form_domande");
-  var domanda = `<h3>${questions[x].question}</h3>`
+  var domanda = `<h3>${questions[x].question}</h3>` 
   form.innerHTML = domanda;
-  
+  const ordineRisposte = [shuffle()]
   
   var form_risposte = document.getElementById("risposte");
-  var risposte = `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
-  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button><br>
+  var risposte =
+  `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
+  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button>
+  <br>
   <button class="bottoneRisposte">${questions[x].incorrect_answers[2]}</button>
   <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
   
@@ -159,7 +164,13 @@ function domande (x) {
 
 }
 
+  document.querySelector('form').addEventListener('submit', function(event) { 
+  event.preventDefault();
+  })
+
 window.onload = function() {
+
+
   let i = 1;
   let btn_procedi = document.querySelector(".next");
   domande(i-1)
@@ -168,9 +179,9 @@ window.onload = function() {
     i++
   });
 
-  const numeroCorrente = document.querySelector("footer p #numeroCorrente")
-  const numeroDomande = document.querySelector("footer p #numeroDomande")
-  numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
+  // const numeroCorrente = document.querySelector("footer p #numeroCorrente")
+  // const numeroDomande = document.querySelector("footer p #numeroDomande")
+  // numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
 }
 
 

@@ -133,13 +133,25 @@ h1 .sinistra {
 
 /*Benchmark*/
 
+#form_domande h3 {
+    color: aliceblue;
+    text-align: left;
+    text-wrap: wrap;
+    text-overflow: clip;
+    width: fit-content;
+    margin-bottom: 15vh;
+}
+
 .bottoneRisposte,.bottoneRisposte::after{
     background-color: rgb(255, 255, 255, 0.2);
     margin: 0.5vw;
     padding: 2vw;
     color: white;
     border-color: white;
-    border-radius: 2rem;  
+    border-radius: 2rem;
+    width: 30vw;
+    height: fit-content; 
+    text-wrap: nowrap;
 }
 
 .bottoneRisposte:active{
@@ -245,7 +257,6 @@ header h1, header h2 {
 }
 #proceed_bench{
     float: right;
-}
 }
 
 #results p {
