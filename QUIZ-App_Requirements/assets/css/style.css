@@ -11,13 +11,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    margin-left: 10%;
+    font-size: 16px;
 }
 
 .container {
     padding: 2%, 4%;
     margin: 6%;
+    width: fit-content;
+    max-width: fit-content;
 }
 
 .epilogo {
@@ -28,7 +29,7 @@ body {
 h1 {
     color: white;
     font-family: 'Outfit', sans-serif;
-    font-size: 4em;
+    font-size: 60px;
     font-weight: 100;
     margin-top: 8%;
     text-align:justify; 
@@ -60,11 +61,33 @@ ul, p, label {
     padding: 0;
     margin: 0;
 }
-
 .centrato{
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+/* FORM  E  BOTTONI */
+
+div .contenitoreRisposte{
+    max-width: fit-content;
+    margin-left: 50%;
+    margin-right: auto;
+}
+
+
+
+footer .centrato {
+    font-family: Outfit;
+    padding-top: 20%;
+    text-align: justify;
+    color: white
+}
+
+#numeroDomande {
+    font-weight: 500;
+    color: #D20094;
 }
 
 h1 .sinistra {
@@ -112,7 +135,14 @@ h1 .sinistra {
 
 /*Benchmark*/
 
-
+#form_domande h3 {
+    color: aliceblue;
+    text-align: left;
+    text-wrap: wrap;
+    text-overflow: clip;
+    width: fit-content;
+    margin-bottom: 15vh;
+}
 
 .bottoneRisposte,.bottoneRisposte::after{
     background-color: rgba(46, 50, 72, 0.47);
@@ -155,6 +185,7 @@ footer .centrato {
     width: 15%;
     text-align: left;
     margin-top: 5%;
+    background-color: white;
 }
 
 /* BENCHMARK PAGE */
@@ -174,12 +205,6 @@ footer .centrato {
 }
 #form_domande{
     margin-top: 200px;
-}
-
-* :not(*:not(#results)) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 header .container  img {
@@ -207,10 +232,15 @@ header h1, header h2 {
 }
 
 .Circular_progress_bar {
-    width: 400px; 
-    height: 400px; 
+    position: absolute;
+    background-color: #D20094;
+    border-radius: 50%;
+}
+.Circular_progress_bar .cerchioVuoto {
     position: relative;
-    margin: auto; 
+    background-color:#12e1eb;
+    stroke: red;
+    stroke-width: 50%;
 }
 
 .outer {
@@ -224,14 +254,13 @@ header h1, header h2 {
     align-items: center;
 }
 
-.inner {
-    width: 250px;
-    height: 250px;
+.Circular_progress_bar::before {
+    content: "";
+    position: absolute;
+    width: 350px; 
+    height: 350px;
+    background-image: radial-gradient(transparent 0% 50%, #00bbff 50%);
     border-radius: 50%;
-    box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.15), 
-    inset -4px -4px 6px -1px rgba(0, 0, 0, 0.7),
-    -0.5px -0.5px 0px rgb(0, 0, 0), 
-    0.5px 0.5px 0px rgb(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.5);
 }
 
 #results h3,
@@ -251,23 +280,10 @@ header h1, header h2 {
     float: right;
 }
 
-
 #results p {
     top: 60%; /* Posizione verticale */
     transform: rotate(90deg); /* Ruota il testo per seguirne il perimetro del cerchio */
 }
-/* PROVA */
-/* css della pagina feedback*/
-/*#epi_logo img
-
-{
-   max-width: 20%;
-   display: inline-block;
-   width: 20%;
-   text-align: left;
-
-}
-*/
 
 #text
 {
@@ -302,8 +318,8 @@ color: #31e4e4;
 .feedback-input {
 margin-top: 20px;
 padding: 10px; 
-width: 80%; 
-max-width: 400px; 
+width: fit-content; 
+max-width: 100%; 
 border: none; 
 border-radius: 3px;
 outline: none;
