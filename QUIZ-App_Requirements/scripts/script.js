@@ -119,25 +119,6 @@ const questions = [
   ];
 //-----------------------------WELCOME-------------------------------//
 
-<<<<<<< HEAD
-const timer=function(){
-    var i=60;
-    text=document.querySelector("#secondi_rimanenti p");
-    setInterval(function(){
-        if( i > 0 ){
-            text.innerHTML=i;
-        }else if( i == 0 ){
-            text.innerHTML="boom";
-        }else{
-            clearInterval();
-        }
-        i--;
-    }, 1000)
-}
-
-timer();
-=======
->>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 
 //-------------------QUIZ----------------------//
 
@@ -157,7 +138,7 @@ const timer = function () {
           text.innerHTML = "BOOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM!";
       }
       i--;            
-  }, 500);
+  }, 1000);
 }
 
 
@@ -174,11 +155,6 @@ function showQuestion(index) {
     answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
     answerContainer.innerHTML = answersHTML;
 
-<<<<<<< HEAD
-  let num_domanda = document.querySelector(".centrato");
-  let text = `<p>QUESTION ${index+1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
-  num_domanda.innerHTML = text;
-=======
     let num_domanda = document.querySelector(".centrato");
     let text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
     num_domanda.innerHTML = text;
@@ -186,7 +162,6 @@ function showQuestion(index) {
     // Reset del timer ad ogni nuova domanda
     clearInterval(intervalId); // Interrompiamo l'intervallo precedente
     timer();
->>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 }
 
 var currentQuestionIndex = 0;
@@ -219,22 +194,6 @@ document.getElementById("risposte").addEventListener("click", function(){
 
 
 showQuestion(currentQuestionIndex);
-<<<<<<< HEAD
- 
-=======
 
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 //-----------BARRA DI AVANZAMENTO-------------//
 
