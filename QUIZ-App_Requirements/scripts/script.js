@@ -150,7 +150,7 @@ function timer() {
           text.innerHTML = "BOOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM!";
       }
       i--;            
-  }, 500);
+  }, 1000);
 }
 
 
