@@ -112,13 +112,17 @@ h1 .sinistra {
 
 /*Benchmark*/
 
+
+
 .bottoneRisposte,.bottoneRisposte::after{
-    background-color: rgb(255, 255, 255, 0.2);
+    background-color: rgba(46, 50, 72, 0.47);
     margin: 0.5vw;
     padding: 2vw;
     color: white;
     border-color: white;
-    border-radius: 2rem;  
+    border-radius: 50px; 
+    width: 30%; 
+    font-size: 1.5em;
 }
 
 .bottoneRisposte:active{
