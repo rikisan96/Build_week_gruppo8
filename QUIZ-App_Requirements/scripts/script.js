@@ -124,7 +124,7 @@ const questions = [
 const timer=function(){
     var i=59;
 
-    text=document.querySelector("#secondi_rimanenti p");
+    text=document.querySelector("#secondi_rimanenti");
 
 
     setInterval(function(){
@@ -178,6 +178,7 @@ function domande (x) {
 window.onload = function() {
   let i = 1;
   let btn_procedi = document.querySelector(".next");
+
   domande(i-1)
   btn_procedi.addEventListener("click", function(){ 
     domande(i)
