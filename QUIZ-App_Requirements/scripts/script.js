@@ -150,10 +150,23 @@ function domande (x) {
   
   
   var form_risposte = document.getElementById("risposte");
-  var risposte = `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
-  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button><br>
-  <button class="bottoneRisposte">${questions[x].incorrect_answers[2]}</button>
-  <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
+  var risposte = 
+    `
+    <div>
+      <h3>${questions[x].question}</h3>
+      <a class="bottoneRisposte">${questions[x].incorrect_answers[0]}</a>
+      <a class="bottoneRisposte">${questions[x].incorrect_answers[1]}</a>
+      <a class="bottoneRisposte">${questions[x].incorrect_answers[2]}</a>
+      <a class="bottoneRisposte">${questions[x].correct_answer}</a>
+    <div>
+    `
+    /*
+      `<div>
+      </
+  <a class="bottoneRisposte">${questions[x].incorrect_answers[0]}</a><br>
+                  <a class="bottoneRisposte">${questions[x].incorrect_answers[1]}</a><br>
+                  <a class="bottoneRisposte">${questions[x].incorrect_answers[2]}</a><br>
+                  <a class="bottoneRisposte">${questions[x].correct_answer}</a>`; */
   
   form_risposte.innerHTML = risposte
 
