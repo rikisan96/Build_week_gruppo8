@@ -125,6 +125,26 @@ h1 .sinistra {
     background-color: #D20094;
 }
 
+div .contenitoreRisposte{
+    max-width: fit-content;
+    margin-left: 50%;
+    margin-right: auto;
+}
+
+
+
+footer .centrato {
+    font-family: Outfit;
+    padding-top: 20%;
+    text-align: justify;
+    color: white
+}
+
+#numeroDomande {
+    font-weight: 500;
+    color: #D20094;
+}
+
 /*---------------------------RESULTS PAGE----------------------*/
 
 .container3 .epilogo {

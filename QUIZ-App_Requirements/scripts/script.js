@@ -157,6 +157,9 @@ function domande (x) {
   
   form_risposte.innerHTML = risposte
 
+  let num_domanda = document.querySelector(".centrato");
+  let text = `<p>QUESTION ${x+1}<span id="numeroDomande">/${questions.length}</span></p>`;
+  num_domanda.innerHTML = text;
 }
 
 window.onload = function() {
