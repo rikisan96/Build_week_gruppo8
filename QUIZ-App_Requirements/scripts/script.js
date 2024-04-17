@@ -178,7 +178,6 @@ function mostraDomanda(index) {
     // Reset del timer ad ogni nuova domanda
     clearInterval(intervalId); // Interrompiamo l'intervallo precedente
     timer();
->>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 }
 
 // funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
