@@ -172,7 +172,7 @@ function mostraDomanda(index) {
     coenitoreRisposta.innerHTML = rispostaHTML;
 
     num_domanda = document.querySelector(".centrato");
-    text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
+    text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
     num_domanda.innerHTML = text;
 
     // Reset del timer ad ogni nuova domanda

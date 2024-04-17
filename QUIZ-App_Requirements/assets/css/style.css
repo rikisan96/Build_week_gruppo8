@@ -155,8 +155,12 @@ h1 .sinistra {
     font-size: 1rem;
 }
 
-#risposte {
+#risposte button {
+    margin-left: 2rem;
+}
 
+#risposte {
+    align-items: center;
 }
 
 .bottoneRisposte:active{
