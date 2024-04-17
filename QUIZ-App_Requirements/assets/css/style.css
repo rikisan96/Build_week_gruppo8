@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    padding: 2%, 4%;
+    padding: 0%, 4%;
     margin: 6%;
     width: fit-content;
     max-width: fit-content;
@@ -50,6 +50,12 @@ section h3 {
     color: #D20094;
 }
 
+#form_domande h3 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
 ul, p, label {
     margin-top: 0;
     color: white; 
@@ -65,6 +71,7 @@ ul, p, label {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 
@@ -135,6 +142,10 @@ h1 .sinistra {
 
 /*Benchmark*/
 
+#risposte{
+    align-items:end;
+}
+
 #form_domande h3 {
     color: aliceblue;
     text-align: left;
@@ -146,13 +157,23 @@ h1 .sinistra {
 
 .bottoneRisposte,.bottoneRisposte::after{
     background-color: rgba(46, 50, 72, 0.47);
-    margin: 0.5vw;
+    margin: 0.8vw;
+    margin-left: 2.5vw;
+    margin-top: 0.3vw;
     padding: 2vw;
     color: white;
     border-color: white;
-    border-radius: 50px; 
+    border-radius: 50px;
     width: 30%; 
-    font-size: 1.5em;
+    font-size: 1rem;
+}
+
+#risposte button {
+    margin-left: 2rem;
+}
+
+#risposte {
+    align-items: center;
 }
 
 .bottoneRisposte:active{
@@ -166,11 +187,10 @@ div .contenitoreRisposte{
 }
 
 
-
 footer .centrato {
     font-family: Outfit;
     padding-top: 20%;
-    text-align: justify;
+    text-align: jusctify;
     color: white
 }
 
@@ -179,13 +199,16 @@ footer .centrato {
     color: #D20094;
 }
 
+.centrato {
+    margin-top: 5%
+}
+
 /*---------------------------RESULTS PAGE----------------------*/
 
-.container3 .epilogo {
+.container .epilogo {
     width: 15%;
     text-align: left;
     margin-top: 5%;
-    background-color: white;
 }
 
 /* BENCHMARK PAGE */
@@ -204,7 +227,7 @@ footer .centrato {
     border-radius: 50%;
 }
 #form_domande{
-    margin-top: 200px;
+    margin: 18vh 0;
 }
 
 header .container  img {

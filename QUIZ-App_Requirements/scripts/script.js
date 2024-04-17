@@ -190,9 +190,9 @@ function mostraDomanda(index) {
   rispostaHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
   coenitoreRisposta.innerHTML = rispostaHTML;
 
-  num_domanda = document.querySelector(".centrato");
-  text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
-  num_domanda.innerHTML = text;
+    num_domanda = document.querySelector(".centrato");
+    text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
+    num_domanda.innerHTML = text;
 
   // Reset del timer ad ogni nuova domanda
   clearInterval(intervalId); // Interrompiamo l'intervallo precedente
