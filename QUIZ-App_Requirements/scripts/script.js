@@ -118,10 +118,21 @@ const questions = [
     },
   ];
 
-  /*
-const numeroDomande = prompt()*/
+  
 
 
+function generateQuestion(){
+    
+}
+
+function inputNumeroDomande() {
+    
+}
+window.onload = function () {
+    const numeroCorrente = document.querySelector("footer p #numeroCorrente")
+    const numeroDomande = document.querySelector("footer p #numeroDomande")
+    numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
+};
 
 
 const timer=function(){
@@ -131,9 +142,9 @@ const timer=function(){
 
 
     setInterval(function(){
-        if(i>0){
+        if( i > 0 ){
             text.innerHTML=i;
-        }else if(i==0){
+        }else if( i == 0 ){
             text.innerHTML="boom";
         }else{
             clearInterval();
