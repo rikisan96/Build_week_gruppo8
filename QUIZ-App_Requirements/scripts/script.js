@@ -122,18 +122,6 @@ const questions = [
 const numeroDomande = prompt()*/
 
 
-function generateQuestion(){
-    
-}
-
-function inputNumeroDomande() {
-    
-}
-
-
-  window.onload = function () {
-    inputNumeroDomande(numeroDomande)
-  };
 
 
 const timer=function(){
@@ -155,6 +143,45 @@ const timer=function(){
 }
 
 timer();
+
+//-------------------QUIZ----------------------//
+
+function domande (x) {
+  var form = document.getElementById("form_domande");
+  var domanda = `<h3>${questions[x].question}</h3>`
+  form.innerHTML = domanda;
+  
+  var form_risposte = document.getElementById("risposte");
+  var risposte = `<button>${questions[x].incorrect_answers[0]}</button>
+  <button>${questions[x].incorrect_answers[1]}</button>
+  <button>${questions[x].incorrect_answers[2]}</button>
+  <button>${questions[x].correct_answer}</button>`; 
+  
+  form_risposte.innerHTML = risposte
+}
+
+window.onload = function() {
+  let i = 1;
+  let btn_procedi = document.querySelector(".next");
+  domande(i-1)
+  btn_procedi.addEventListener("click", function(){ 
+    domande(i)
+    i++
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //-----------BARRA DI AVANZAMENTO-------------//
 
