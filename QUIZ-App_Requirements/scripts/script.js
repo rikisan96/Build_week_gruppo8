@@ -139,7 +139,13 @@ const timer=function(){
 // timer();
 
 //-------------------QUIZ----------------------//
+var punteggio = 0;
+function showQuestion(index) {
+  var questionContainer = document.getElementById("form_domande");
+  var questionHTML = "<h3>" + questions[index].question + "</h3>";
+  questionContainer.innerHTML = questionHTML;
 
+<<<<<<< HEAD
 function verificaProp(x) {
   if(correct_answer in x){
     console.log("la risposta e' corretta")
@@ -161,9 +167,22 @@ function domande (x) {
   <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
   
   form_risposte.innerHTML = risposte
+=======
+  var answerContainer = document.getElementById("risposte");
+  var answersHTML = "";
+  for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
+      answersHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
+  }
+  answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
+  answerContainer.innerHTML = answersHTML;
+>>>>>>> 7d55d2d6d81ff2ae4fbf178ae3a783b56f227f52
 
+  let num_domanda = document.querySelector(".centrato");
+  let text = `<p>QUESTION ${index+1}<span id="numeroDomande">/${questions.length}</span></p>`;
+  num_domanda.innerHTML = text;
 }
 
+<<<<<<< HEAD
   document.querySelector('form').addEventListener('submit', function(event) { 
   event.preventDefault();
   })
@@ -182,8 +201,30 @@ window.onload = function() {
   // const numeroCorrente = document.querySelector("footer p #numeroCorrente")
   // const numeroDomande = document.querySelector("footer p #numeroDomande")
   // numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
+=======
+var currentQuestionIndex = 0;
+
+function handleAnswerClick() {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+      showQuestion(currentQuestionIndex);
+      var cliccato = questions[currentQuestionIndex].incorrect_answers;
+  } else {
+      alert("Hai completato il quiz!");
+  }
+>>>>>>> 7d55d2d6d81ff2ae4fbf178ae3a783b56f227f52
 }
 
+document.getElementById("risposte").addEventListener("click", function () {
+  handleAnswerClick()
+  punteggio ()
+});
+
+showQuestion(currentQuestionIndex);
+
+function punteggio () {
+  if (questions[i].correct_answer === )
+} 
 
 
 
