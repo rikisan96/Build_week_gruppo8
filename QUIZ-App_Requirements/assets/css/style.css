@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    padding: 2%, 4%;
+    padding: 0%, 4%;
     margin: 6%;
     width: fit-content;
     max-width: fit-content;
@@ -135,6 +135,10 @@ h1 .sinistra {
 
 /*Benchmark*/
 
+#risposte{
+    align-items:end;
+}
+
 #form_domande h3 {
     color: aliceblue;
     text-align: left;
@@ -181,11 +185,10 @@ footer .centrato {
 
 /*---------------------------RESULTS PAGE----------------------*/
 
-.container3 .epilogo {
+.container .epilogo {
     width: 15%;
     text-align: left;
     margin-top: 5%;
-    background-color: white;
 }
 
 /* BENCHMARK PAGE */
