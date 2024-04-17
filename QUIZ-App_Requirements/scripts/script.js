@@ -124,7 +124,7 @@ const questions = [
 const timer=function(){
     var i=59;
 
-    text=document.querySelector("#secondi_rimanenti p");
+    text=document.querySelector("#secondi_rimanenti");
 
 
     setInterval(function(){
