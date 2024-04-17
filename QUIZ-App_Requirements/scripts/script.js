@@ -121,20 +121,6 @@ const questions = [
   
 
 
-function generateQuestion(){
-    
-}
-
-function inputNumeroDomande() {
-    
-}
-window.onload = function () {
-    const numeroCorrente = document.querySelector("footer p #numeroCorrente")
-    const numeroDomande = document.querySelector("footer p #numeroDomande")
-    numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
-};
-
-
 const timer=function(){
     var i=59;
 
@@ -162,13 +148,15 @@ function domande (x) {
   var domanda = `<h3>${questions[x].question}</h3>`
   form.innerHTML = domanda;
   
+  
   var form_risposte = document.getElementById("risposte");
-  var risposte = `<button>${questions[x].incorrect_answers[0]}</button>
-  <button>${questions[x].incorrect_answers[1]}</button>
-  <button>${questions[x].incorrect_answers[2]}</button>
-  <button>${questions[x].correct_answer}</button>`; 
+  var risposte = `<button class="bottoneRisposte">${questions[x].incorrect_answers[0]}</button>
+  <button class="bottoneRisposte">${questions[x].incorrect_answers[1]}</button><br>
+  <button class="bottoneRisposte">${questions[x].incorrect_answers[2]}</button>
+  <button class="bottoneRisposte">${questions[x].correct_answer}</button>`; 
   
   form_risposte.innerHTML = risposte
+
 }
 
 window.onload = function() {
@@ -179,6 +167,10 @@ window.onload = function() {
     domande(i)
     i++
   });
+
+  const numeroCorrente = document.querySelector("footer p #numeroCorrente")
+  const numeroDomande = document.querySelector("footer p #numeroDomande")
+  numeroDomande.innerHTML = numeroDomande.innerHTML.replace("{n}", questions.length)
 }
 
 
