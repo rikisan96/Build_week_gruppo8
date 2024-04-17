@@ -117,7 +117,9 @@ const questions = [
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
   ];
+//-----------------------------WELCOME-------------------------------//
 
+<<<<<<< HEAD
 const timer=function(){
     var i=60;
     text=document.querySelector("#secondi_rimanenti p");
@@ -134,45 +136,105 @@ const timer=function(){
 }
 
 timer();
+=======
+>>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 
 //-------------------QUIZ----------------------//
+
 var punteggio = 0;
+
+
+// Funzione del timer
+const timer = function () {
+  var i = 10;
+  var text = document.querySelector("#secondi_rimanenti p");
+
+  intervalId = setInterval(function () {
+      if (i >= 0) {
+          text.innerHTML = i;
+      } else {
+          clearInterval(intervalId);
+          text.innerHTML = "BOOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM!";
+      }
+      i--;            
+  }, 500);
+}
+
+
 function showQuestion(index) {
-  var questionContainer = document.getElementById("form_domande");
-  var questionHTML = "<h3>" + questions[index].question + "</h3>";
-  questionContainer.innerHTML = questionHTML;
+    var questionContainer = document.getElementById("form_domande");
+    var questionHTML = "<h3>" + questions[index].question + "</h3>";
+    questionContainer.innerHTML = questionHTML;
 
-  var answerContainer = document.getElementById("risposte");
-  var answersHTML = "";
-  for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
-      answersHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
-  }
-  answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
-  answerContainer.innerHTML = answersHTML;
+    var answerContainer = document.getElementById("risposte");
+    var answersHTML = "";
+    for (var i = 0; i < questions[index].incorrect_answers.length; i++) {
+        answersHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
+    }
+    answersHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
+    answerContainer.innerHTML = answersHTML;
 
+<<<<<<< HEAD
   let num_domanda = document.querySelector(".centrato");
   let text = `<p>QUESTION ${index+1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
   num_domanda.innerHTML = text;
+=======
+    let num_domanda = document.querySelector(".centrato");
+    let text = `<p>QUESTION ${index + 1}<span id="numeroDomande">/${questions.length}</span></p>`;
+    num_domanda.innerHTML = text;
+
+    // Reset del timer ad ogni nuova domanda
+    clearInterval(intervalId); // Interrompiamo l'intervallo precedente
+    timer();
+>>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 }
 
 var currentQuestionIndex = 0;
+var intervalId; // Variabile per memorizzare l'ID dell'intervallo
 
 function handleAnswerClick() {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-      showQuestion(currentQuestionIndex);
-      var cliccato = questions[currentQuestionIndex].incorrect_answers;
-  } else {
-      alert("Hai completato il quiz!");
-  }
+    var selectedAnswer = event.target.innerText;
+    var correctAnswer = questions[currentQuestionIndex].correct_answer;
+    
+    if (selectedAnswer === correctAnswer) {
+        punteggio++;
+        console.log("correct")
+    }else{
+      console.log("uncorrect")
+    }
+    
+    
+    console.log((punteggio/10)*100+"%")
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(currentQuestionIndex);
+    } else {
+        alert("Hai completato il quiz! Punteggio totale: " + (punteggio/10)*100+"%");
+    }
 }
 
-document.getElementById("risposte").addEventListener("click", function () {
-  handleAnswerClick()
-  punteggio ()
-});
+document.getElementById("risposte").addEventListener("click", function(){
+  handleAnswerClick();
+})
+
 
 showQuestion(currentQuestionIndex);
+<<<<<<< HEAD
  
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> c1463c88d17abac5799b326e4ebb200569fd6dcb
 //-----------BARRA DI AVANZAMENTO-------------//
 
