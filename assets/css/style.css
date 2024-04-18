@@ -15,11 +15,12 @@ body {
 }
 
 .container {
-    padding: 0%, 4%;
+    padding: 0% 4%;
     margin: 6%;
     max-width: 100%;
     min-width: 3rem;
     width: fit-content;
+    align-items: center;
 }
 
 .epilogo {
@@ -177,8 +178,6 @@ h1 .sinistra {
 #cerchioBiancoScore {
     position: relative;
     fill: none;
-    top: 50%;
-    left: 50%;
     stroke: #31e4e4;
     stroke-width: 10;
     stroke-dasharray: 283; 
@@ -204,7 +203,7 @@ h1 .sinistra {
 }
 
 .bottoneRisposte,.bottoneRisposte::after{
-    background-color: rgba(46, 50, 72, 0.47);
+    background-color: rgba(46, 50, 72, 0.7);
     max-width: 10rem;
     width: 100%;
     margin: 0.8rem;
@@ -212,7 +211,7 @@ h1 .sinistra {
     padding-inline: 7rem;
     padding-top: 4rem;
     color: white;
-    border-color: white;
+    border: 5px solid rgba(255, 255, 255, 0.7);
     border-radius: 50px;
     text-wrap: nowrap;
 }
@@ -238,7 +237,7 @@ footer *{
     margin-top: 50%;
 }
 
-footer .next{
+footer > .next button{
     background-color: transparent;
     margin: 0;
     margin-top: 30%;
@@ -379,13 +378,21 @@ cursor: pointer;
 color: #31e4e4; 
 }
 .feedback-input {
+display: inline-block;
 margin-top: 20px;
-padding: 10px; 
-width: fit-content; 
-max-width: 100%; 
-border: none; 
+margin-bottom: 20px;
+padding-right: 70%; 
+width: 20rem; 
+max-width: max-content; 
+border-bottom: 1px solid #D20094;
+border-top: none;
+border-right: none;
+border-left: none;
 border-radius: 3px;
 outline: none;
+background-color: transparent;
+color: white;
+
 }
 .submit-btn {
 text-align: center;
@@ -417,11 +424,7 @@ padding-bottom: 0px;
 margin-bottom: 0px;
 }
 
-.feedback-input{
-background-color: transparent;
-width: 90%;
-color: white;
-}
+
 
 /* TIMER */
 

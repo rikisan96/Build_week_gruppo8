@@ -119,8 +119,8 @@ const questions = [
 ];
 
 
-
 var punteggio = 0;
+var risposteErrate = 10 - punteggio;
 var indiceDomandaCorrente = 0;
 var intervalId; // Variabile per memorizzare l'ID dell'intervallo
 
@@ -136,7 +136,7 @@ document.getElementById("risposte").addEventListener("click", function () {
 })
 
 
-/******** DICIHIARAZIONE FUNZIONI **********/
+/******** DICHIARAZIONE FUNZIONI **********/
 
 function timer() {
   let i, text;
