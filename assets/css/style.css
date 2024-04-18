@@ -61,6 +61,10 @@ ul, p, label {
     color: white; 
 }
 
+.timer-container .destra {
+    float: right;
+}
+
 .destra {
     text-align: right;
     align-items: center;
@@ -165,6 +169,24 @@ h1 .sinistra {
     transform-origin: center;
     transform: rotate(270deg);
 }
+/* copia modificata per la scorebar */
+.scoreBar{
+    fill: none;
+    stroke: #d92792; 
+    stroke-width: 10;
+    stroke-dasharray: 283; 
+}
+
+#cerchioBiancoScore {
+    position: relative;
+    fill: none;
+    top: 50%;
+    left: 50%;
+    stroke: #31e4e4;
+    stroke-width: 10;
+    stroke-dasharray: 283; 
+    stroke-dashoffset: 50;
+}
 
 
 .time {
@@ -262,10 +284,6 @@ footer .centrato {
 header .container  img {
     text-align: left;
 }
-/*
-header {
-    text-align: center; 
-}*/
 
 header h1 {
     font-size: 3em;
@@ -283,7 +301,7 @@ header h1, header h2 {
     color: white; 
 }
 
-.Circular_progress_bar {
+/* .Circular_progress_bar {
     position: absolute;
     background-color: #D20094;
     border-radius: 50%;
@@ -293,7 +311,7 @@ header h1, header h2 {
     background-color:#12e1eb;
     stroke: red;
     stroke-width: 50%;
-}
+} */
 
 .outer {
     width: 300px;
@@ -304,15 +322,6 @@ header h1, header h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.Circular_progress_bar::before {
-    content: "";
-    position: absolute;
-    width: 350px; 
-    height: 350px;
-    background-image: radial-gradient(transparent 0% 50%, #00bbff 50%);
-    border-radius: 50%;
 }
 
 #results h3,
