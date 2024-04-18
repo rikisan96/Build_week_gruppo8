@@ -207,20 +207,11 @@ function mostraDomanda(index) {
 
 // funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
 function rispostaAlClick() {
-  let selezionaRispostaCliccata, rispostaCorretta;
-
-  selezionaRispostaCliccata = event.target.innerText;
-  rispostaCorretta = questions[indiceDomandaCorrente].correct_answer;
-
-  if (selezionaRispostaCliccata === rispostaCorretta) {
-    punteggio++;
-    console.log("correct")
-  } else {
-    console.log("uncorrect")
-  }
   
-  console.log((punteggio / 10) * 100 + "%")
 
+  
+  calcolaPunteggio ()
+  
   if (indiceDomandaCorrente === questions.length) {
     window.location.href = "././results.html";
   }
@@ -230,6 +221,21 @@ function rispostaAlClick() {
   console.log("funziona");
 }
 
+//----------------------CALCOLO PUNTEGGIO--------------------------//
 
+function calcolaPunteggio () { 
+  let selezionaRispostaCliccata, rispostaCorretta;
+
+  selezionaRispostaCliccata = event.target.innerText;
+  rispostaCorretta = questions[indiceDomandaCorrente].correct_answer;
+  if (selezionaRispostaCliccata === rispostaCorretta) {
+    punteggio++;
+    console.log("correct");
+  } else {
+    console.log("uncorrect");
+   
+  }
+  console.log((punteggio / 10) * 100 + "%")
+}
 
 
