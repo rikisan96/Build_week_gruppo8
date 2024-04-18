@@ -192,7 +192,7 @@ function mostraDomanda(index) {
     rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].incorrect_answers[i]}</a>`;
   }
   rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].correct_answer}</a>`;
-  coenitoreRisposta.innerHTML = rispostaHTML;
+  contenitoreRisposta.innerHTML = rispostaHTML;
 
   num_domanda = document.querySelector(".centrato");
   text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
