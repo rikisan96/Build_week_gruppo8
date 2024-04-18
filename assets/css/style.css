@@ -142,6 +142,32 @@ h1 .sinistra {
 
 /*Benchmark*/
 
+.timer-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    float: right; 
+}
+
+.timer {
+    width: 100%;
+    height: 100%;
+}
+
+.progress {
+    fill: none;
+    stroke: #d92792; 
+    stroke-width: 10;
+    stroke-dasharray: 283; 
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear; /* una transizione più fluida */
+}
+
+.time {
+    font-size: 36px; 
+    fill: white; 
+}
+
 #risposte{
     align-items:end;
 }
@@ -384,3 +410,5 @@ color: white;
 }
 
 /* TIMER */
+
+

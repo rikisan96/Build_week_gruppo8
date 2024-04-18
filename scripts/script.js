@@ -225,4 +225,32 @@ function rispostaAlClick() {
   console.log("funziona");
 }
 
+//-----------------------------TIMER----------------------------//
+
+/*document.addEventListener("DOMContentLoaded", function () {
+  const timeElement = document.getElementById('time');
+  let timeLeft = 15;
+
+  const timerInterval = setInterval(() => {
+      timeLeft--;
+
+      if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+      }
+
+      timeElement.textContent = timeLeft;
+      updateProgress(timeLeft);
+  }, 1000);
+
+  function updateProgress(timeLeft) {
+      const progress = (1 - timeLeft / 60) * 283; 
+      const progressElement = document.querySelector('.progress');
+      progressElement.style.strokeDashoffset = progress;
+      
+      if (timeLeft <= 10) {
+          progressElement.style.stroke = 'red'; 
+      }
+  }
+});*/
+
 
