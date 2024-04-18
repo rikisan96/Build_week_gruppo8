@@ -10,15 +10,16 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit' , 'Inter', sans-serif;
     font-size: 16px;
 }
 
 .container {
     padding: 0%, 4%;
     margin: 6%;
+    max-width: 100%;
+    min-width: 3rem;
     width: fit-content;
-    max-width: fit-content;
 }
 
 .epilogo {
@@ -75,26 +76,13 @@ ul, p, label {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5%
+
 
 }
-
 
 /* FORM  E  BOTTONI */
 
-div .contenitoreRisposte{
-    max-width: fit-content;
-    margin-left: 50%;
-    margin-right: auto;
-}
-
-
-
-footer .centrato {
-    font-family: Outfit;
-    padding-top: 20%;
-    text-align: justify;
-    color: white
-}
 
 #numeroDomande {
     font-weight: 500;
@@ -144,7 +132,16 @@ h1 .sinistra {
     font-weight: 700;
 }
 
+
+
 /*Benchmark*/
+
+/* contenitore risposte a bottone */
+#container { 
+    max-width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
 
 .timer-container {
     width: 150px;
@@ -209,15 +206,16 @@ h1 .sinistra {
 
 .bottoneRisposte,.bottoneRisposte::after{
     background-color: rgba(46, 50, 72, 0.47);
-    margin: 0.8vw;
-    margin-left: 2.5vw;
-    margin-top: 0.3vw;
-    padding: 2vw;
+    max-width: 10rem;
+    width: 100%;
+    margin: 0.8rem;
+    margin-top: 0.3rem;
+    padding-inline: 7rem;
+    padding-top: 4rem;
     color: white;
     border-color: white;
     border-radius: 50px;
-    width: 30%; 
-    font-size: 1rem;
+    text-wrap: nowrap;
 }
 
 #risposte button {
@@ -237,7 +235,16 @@ div .contenitoreRisposte{
     margin-left: 50%;
     margin-right: auto;
 }
+footer *{
+    margin-top: 50%;
+}
 
+footer .next{
+    background-color: transparent;
+    margin: 0;
+    margin-top: 30%;
+    padding-inline: 4rem;
+}
 
 footer .centrato {
     font-family: Outfit;
@@ -249,10 +256,6 @@ footer .centrato {
 #numeroDomande {
     font-weight: 500;
     color: #D20094;
-}
-
-.centrato {
-    margin-top: 5%
 }
 
 /*---------------------------RESULTS PAGE----------------------*/
