@@ -138,16 +138,20 @@ document.getElementById("risposte").addEventListener("click", function () {
 
 /******** DICIHIARAZIONE FUNZIONI **********/
 
-// Funzione del timer
 function timer() {
   let i, text;
-
-  i = 10;
-  text = document.querySelector("#secondi_rimanenti p");
-
+  const tempo = 60
+  i = 60;
+  text = document.querySelector("#time");
+  const progressElement = document.querySelector('.progress');
   intervalId = setInterval(function () {
     if (i >= 0) {
       text.innerHTML = i;
+      const progress = ( 1 - i / tempo) * 283; 
+      progressElement.style.strokeDashoffset = progress;
+      if (i <= 15) {
+        progressElement.style.stroke = 'red'; 
+    }
     } else {
       clearInterval(intervalId);
       
@@ -163,7 +167,7 @@ function timer() {
       console.log(indiceDomandaCorrente);*/
     }
     i--;
-  }, 400);
+  }, 1000);
 }
 
 
@@ -225,32 +229,6 @@ function rispostaAlClick() {
   console.log("funziona");
 }
 
-//-----------------------------TIMER----------------------------//
 
-/*document.addEventListener("DOMContentLoaded", function () {
-  const timeElement = document.getElementById('time');
-  let timeLeft = 15;
-
-  const timerInterval = setInterval(() => {
-      timeLeft--;
-
-      if (timeLeft <= 0) {
-          clearInterval(timerInterval);
-      }
-
-      timeElement.textContent = timeLeft;
-      updateProgress(timeLeft);
-  }, 1000);
-
-  function updateProgress(timeLeft) {
-      const progress = (1 - timeLeft / 60) * 283; 
-      const progressElement = document.querySelector('.progress');
-      progressElement.style.strokeDashoffset = progress;
-      
-      if (timeLeft <= 10) {
-          progressElement.style.stroke = 'red'; 
-      }
-  }
-});*/
 
 

@@ -159,9 +159,13 @@ h1 .sinistra {
     stroke: #d92792; 
     stroke-width: 10;
     stroke-dasharray: 283; 
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 1s linear; /* una transizione più fluida */
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 1s linear; 
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(270deg);
 }
+
 
 .time {
     font-size: 36px; 
@@ -233,8 +237,7 @@ footer .centrato {
 
 .container .epilogo {
     width: 15%;
-    text-align: left;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 /* BENCHMARK PAGE */
