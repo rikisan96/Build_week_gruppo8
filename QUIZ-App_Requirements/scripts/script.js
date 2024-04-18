@@ -185,9 +185,9 @@ function mostraDomanda(index) {
   rispostaHTML = "";
 
   for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
-    rispostaHTML += "<button class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
+    rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
   }
-  rispostaHTML += "<button class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
+  rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
   coenitoreRisposta.innerHTML = rispostaHTML;
 
     num_domanda = document.querySelector(".centrato");
@@ -216,12 +216,11 @@ function rispostaAlClick() {
   
   console.log((punteggio / 10) * 100 + "%")
 
-  if (indiceDomandaCorrente === questions.length-1) {
+  if (indiceDomandaCorrente === questions.length) {
     window.location.href = "/Build_week_gruppo8/results.html";
-  }else{
-    indiceDomandaCorrente++;
-    mostraDomanda(indiceDomandaCorrente);
   }
+  indiceDomandaCorrente++;
+  mostraDomanda(indiceDomandaCorrente);
 
   console.log("funziona");
 }
