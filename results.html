@@ -15,28 +15,27 @@
             <h2 class="centrato">The summary of your answer:</h2>
         </header>
         <section class="centrato" id="results">
-            <div class="timer-container">
+            <div class="timer-container" id="sei_arrivato">
                 <svg viewBox="0 0 100 100">
                     <circle class="scoreBar" cx="50" cy="50" r="45" />
                     <circle id="cerchioBiancoScore" cx="50" cy="50" r="45" />
-                    <text class="time" id="time" x="50" y="50" text-anchor="middle" dominant-baseline="central">60</text>
+                    <text class="time" id="testo" x="50" y="50" text-anchor="middle" dominant-baseline="central"></text>
                 </svg>
+                <div class="testi">
+                    <h4>Congratulations!<br><span>You passed the exam.</span></h4>
+                    <h6>We'll send you the certificate in few minutes.<br>
+                    Check your email (including promotions / spam folder)</h6>
+                </div>
             </div>
 
-                    <div class="txtPunteggioCentrato">
-                        <!--<h2>Congratulations!</h2>
-                        <h3>You passed the exame.</h3><br>
-                        <p>We'll send you the certificate<br> in few minutes.
-                        Check your email (including<br> promotions / spam folder)</p>-->
-                    </div>
-            </div>    
-        </div>
-            <!-- <div class="perc">
-            <h2>Percentuale domande corrette</h2>
-            <h2>Percentuale domande sbagliate</h2>
-        </div> -->
+
     </section>
-</div>
+    <div class="punteggio sx">
+        <h2>Percentuale domande corrette</h2>
+    </div>
+    <div class="punteggio dx">
+        <h2>Percentuale domande sbagliate</h2>
+    </div>
     <footer class="centrato">
         <div>
             <button class="next " id="rate_us">RATE US!</button>
