@@ -174,7 +174,7 @@ function timer() {
 
 // funzione mostra domanda nel box
 function mostraDomanda(index) {
-  let contenitoreDomanda, domandaHTML, coenitoreRisposta, rispostaHTML;
+  let contenitoreDomanda, domandaHTML, contenitoreRisposta, rispostaHTML;
   let num_domanda, text;
 
   contenitoreDomanda = document.getElementById("form_domande");
@@ -186,14 +186,14 @@ function mostraDomanda(index) {
 
   domandaHTML = "<h3>" + questions[index].question + "</h3>";
   contenitoreDomanda.innerHTML = domandaHTML;
-  coenitoreRisposta = document.getElementById("risposte");
+  contenitoreRisposta = document.getElementById("container");
   rispostaHTML = "";
 
   for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
     rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</a>";
   }
   rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].correct_answer + "</a>";
-  coenitoreRisposta.innerHTML = rispostaHTML;
+  contenitoreRisposta.innerHTML = rispostaHTML;
 
     num_domanda = document.querySelector(".centrato");
     text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
