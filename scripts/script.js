@@ -152,7 +152,7 @@ function timer() {
       clearInterval(intervalId);
       
       if(indiceDomandaCorrente===questions.length-1){
-        window.location.href = "/Build_week_gruppo8/results.html";
+        window.location.href= "./results.html";
         return;
       }
       indiceDomandaCorrente++;
@@ -175,7 +175,7 @@ function mostraDomanda(index) {
   contenitoreDomanda = document.getElementById("form_domande");
 
   if(index>=questions.length){
-    window.location.href = "/Build_week_gruppo8/results.html";
+    window.location.href = "././results.html";
     return;
   }
 
@@ -185,9 +185,9 @@ function mostraDomanda(index) {
   rispostaHTML = "";
 
   for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
-    rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</button>";
+    rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</a>";
   }
-  rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].correct_answer + "</button>";
+  rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].correct_answer + "</a>";
   coenitoreRisposta.innerHTML = rispostaHTML;
 
     num_domanda = document.querySelector(".centrato");
@@ -217,7 +217,7 @@ function rispostaAlClick() {
   console.log((punteggio / 10) * 100 + "%")
 
   if (indiceDomandaCorrente === questions.length) {
-    window.location.href = "/Build_week_gruppo8/results.html";
+    window.location.href = "././results.html";
   }
   indiceDomandaCorrente++;
   mostraDomanda(indiceDomandaCorrente);
