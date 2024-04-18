@@ -28,7 +28,8 @@ body {
     text-align: left;
 }
 
-h1 {
+h1 
+{
     color: white;
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
@@ -37,12 +38,14 @@ h1 {
     text-align:justify; 
 }
 
-h3 {
+h3 
+{
     font-size: 1.5em;
     margin-bottom: 1rem;
 }
 
-section {
+section 
+{
     margin-top: 3%;
     text-align: justify;
     font-size: 1.5rem;
@@ -77,8 +80,6 @@ ul, p, label {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%
-
 
 }
 
@@ -117,7 +118,7 @@ h1 .sinistra {
     background-color: transparent; 
 }
 
-.next {
+#proceed{
     background-color: rgb(147, 235, 255);
     color: rgb(0, 0, 0);
     border: none;
@@ -161,18 +162,25 @@ h1 .sinistra {
     stroke: #d92792; 
     stroke-width: 10;
     stroke-dasharray: 283; 
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 283;
     transition: stroke-dashoffset 1s linear; 
     stroke-linecap: round;
     transform-origin: center;
-    transform: rotate(-90deg);
+    transform: rotate(270deg);
 }
+
 /* copia modificata per la scorebar */
-.scoreBar{
+.scoreBar{  
     fill: none;
     stroke: #d92792; 
     stroke-width: 10;
     stroke-dasharray: 283; 
+}
+
+#sei_arrivato {
+    margin-top: 18%;
+    width: 300px;
+    height: 300px;
 }
 
 #cerchioBiancoScore {
@@ -181,16 +189,54 @@ h1 .sinistra {
     stroke: #31e4e4;
     stroke-width: 10;
     stroke-dasharray: 283; 
-    stroke-dashoffset: 50;
+    stroke-dashoffset: 50;  
 }
+
 
 .time {
     font-size: 36px; 
     fill: white; 
 }
 
+#testo {
+    font-size: 10px;
+}
+
+.testi {
+    color: white;
+    position: absolute;
+    top: 53%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
+    font-size: 18px;
+}
+
+.testi span {
+    color: #31e4e4;
+    font-weight: bold;
+}
+
+.testi h6 {
+    font-weight: 0;
+    color: #cacaca;
+}
+
+.punteggio {
+    color: white;
+}
+
+.sx {
+    
+}
+
+.dx {
+    float: right;
+}
+
 #risposte{
     align-items:end;
+
 }
 
 #form_domande h3 {
@@ -282,7 +328,7 @@ footer .centrato {
     margin: 18vh 0;
 }
 
-header  img {
+header .container  img {
     text-align: left;
 }
 
@@ -301,6 +347,23 @@ header h1, header h2 {
     margin: 5px;
     color: white; 
 }
+
+/*----------RESULTS PAGE------------------------*/
+
+#rate_us{
+    background-color:transparent;
+    color: rgb(255, 255, 255);
+    border: 2px solid;
+    box-shadow: 0px 0px 20px 2px #12e1eb;
+    font-size: 1.3em;
+    padding: 1.5em 3em;
+    text-align: center;
+    cursor: pointer;
+    padding-bottom: 30px;
+    font-weight: 500;
+}
+
+
 
 /* .Circular_progress_bar {
     position: absolute;
@@ -335,9 +398,9 @@ header h1, header h2 {
 }
 
 #results h3 {
-    top: 40%; /* Posizione verticale */
     transform: translateX(-50%) translateY(-50%); /* Posiziona al centro del cerchio */
 }
+
 #proceed_bench{
     float: right;
 }
