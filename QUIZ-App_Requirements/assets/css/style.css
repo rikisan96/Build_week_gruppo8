@@ -363,24 +363,24 @@ cursor: pointer;
 font-size: 16px; 
 }
 .submit-btn:hover {
-
 background-color: #76dde0;
-
 }
+
 .tratto{
 align-items: center;
 color: red;
 margin-top: 0px;
-
-
 } 
+
 .comment{
 padding-bottom: 0px;
 margin-bottom: 0px;
 }
-.feedback-input{
-width: 90%;
 
+.feedback-input{
+background-color: transparent;
+width: 90%;
+color: white;
 }
 
 
