@@ -149,11 +149,12 @@ function timer() {
       text.innerHTML = i;
       const progress = ( 1 - i / tempo) * 283; 
       progressElement.style.strokeDashoffset = progress;
-      if (i <= 15) {
-        progressElement.style.stroke = 'red'; 
-    }
+      
     } else {
       clearInterval(intervalId);
+      if (i <= 15) {
+        progressElement.style.stroke = 'red'; 
+      }
       
       if(indiceDomandaCorrente===questions.length-1){
         window.location.href= "./results.html";
