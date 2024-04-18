@@ -124,45 +124,44 @@ var punteggio = 0;
 var indiceDomandaCorrente = 0;
 var intervalId; // Variabile per memorizzare l'ID dell'intervallo
 
-
-window.onload = function () {
+window.onload=function(){
+  document.getElementById("risposte").addEventListener("click", function () {
+    rispostaAlClick();
+    console.log(indiceDomandaCorrente);
+  })
   mostraDomanda(indiceDomandaCorrente);
 }
 
 
-document.getElementById("risposte").addEventListener("click", function () {
-  rispostaAlClick();
-  console.log(indiceDomandaCorrente);
-})
 
 
 /******** DICIHIARAZIONE FUNZIONI **********/
 
 function timer() {
   let i, text;
-  const tempo = 60
+  const tempo = 60;
   i = 60;
   text = document.querySelector("#time");
   const progressElement = document.querySelector('.progress');
   intervalId = setInterval(function () {
     if (i >= 0) {
       text.innerHTML = i;
-      const progress = ( 1 - i / tempo) * 283; 
+      const progress = (1 - i / tempo) * 283;
       progressElement.style.strokeDashoffset = progress;
-      
+
     } else {
       clearInterval(intervalId);
       if (i <= 15) {
-        progressElement.style.stroke = 'red'; 
+        progressElement.style.stroke = 'red';
       }
-      
-      if(indiceDomandaCorrente===questions.length-1){
-        window.location.href= "./results.html";
+
+      if (indiceDomandaCorrente === questions.length - 1) {
+        window.location.href = "./results.html";
         return;
       }
       indiceDomandaCorrente++;
       mostraDomanda(indiceDomandaCorrente);
-      
+
       /*
       window.location.href = "/Build_week_gruppo8/results.html";
       console.log(indiceDomandaCorrente);*/
@@ -179,41 +178,38 @@ function mostraDomanda(index) {
 
   contenitoreDomanda = document.getElementById("form_domande");
 
-  if(index>=questions.length){
+  if (index >= questions.length) {
     window.location.href = "././results.html";
     return;
   }
 
-  domandaHTML = "<h3>" + questions[index].question + "</h3>";
+  domandaHTML = `<h3> ${questions[index].question}</h3>`;
   contenitoreDomanda.innerHTML = domandaHTML;
   coenitoreRisposta = document.getElementById("risposte");
   rispostaHTML = "";
 
   for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
-    rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].incorrect_answers[i] + "</a>";
+    rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].incorrect_answers[i]}</a>`;
   }
-  rispostaHTML += "<a class='bottoneRisposte'>" + questions[index].correct_answer + "</a>";
+  rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].correct_answer}</a>`;
   coenitoreRisposta.innerHTML = rispostaHTML;
 
-    num_domanda = document.querySelector(".centrato");
-    text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
-    num_domanda.innerHTML = text;
+  num_domanda = document.querySelector(".centrato");
+  text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
+  num_domanda.innerHTML = text;
 
   // Reset del timer ad ogni nuova domanda
   clearInterval(intervalId); // Interrompiamo l'intervallo precedente
   timer();
-
 }
 
 // funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
 function rispostaAlClick() {
   
-
-  
-  calcolaPunteggio ()
-  
+  calcolaPunteggio();
   if (indiceDomandaCorrente === questions.length) {
     window.location.href = "././results.html";
+    return;
   }
   indiceDomandaCorrente++;
   mostraDomanda(indiceDomandaCorrente);
@@ -223,9 +219,8 @@ function rispostaAlClick() {
 
 //----------------------CALCOLO PUNTEGGIO--------------------------//
 
-function calcolaPunteggio () { 
+function calcolaPunteggio() {
   let selezionaRispostaCliccata, rispostaCorretta;
-
   selezionaRispostaCliccata = event.target.innerText;
   rispostaCorretta = questions[indiceDomandaCorrente].correct_answer;
   if (selezionaRispostaCliccata === rispostaCorretta) {
@@ -233,9 +228,6 @@ function calcolaPunteggio () {
     console.log("correct");
   } else {
     console.log("uncorrect");
-   
   }
-  console.log((punteggio / 10) * 100 + "%")
+  console.log((punteggio / 10) * 100 + "%");
 }
-
-
