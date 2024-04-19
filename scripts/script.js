@@ -126,15 +126,17 @@ var intervalId;
 var domandeCorrette = 0, domandeTotali = questions.length;
 
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("risposte").addEventListener("click", function () {
+  let btnRisposte = document.getElementById("risposte")
+  if (btnRisposte) {
+    btnRisposte.addEventListener("click", function () {
       rispostaAlClick();
       console.log(indiceDomandaCorrente);
-  });
-
+  }); 
+  } else {
+    console.log("errore")
+  }
   mostraDomanda(indiceDomandaCorrente);
 });
-
-
 
 
 /******** DICHIARAZIONE FUNZIONI TIMER **********/
@@ -208,6 +210,7 @@ function mostraDomanda(index) {
   num_domanda.innerHTML = text;
   clearInterval(intervalId);
   timer();
+
 }
 
 // Funzione per randomizzare un array in modo casuale
@@ -260,16 +263,3 @@ function mostraRisultati () {
 }
 
 //-----------------------------CALCOLO PUNTEGGIO-------------------------------------------------------//
-
-/* function calcolaPercentuale(domandeCorrette, domandeTotali) {
-    return (domandeCorrette / domandeTotali) * 100;
-}
-
-// Questa funzione dovrebbe essere chiamata quando l'utente ha risposto a tutte le domande
-function mostraRisultati(domandeCorrette, domandeTotali) {
-    const percentuale = calcolaPercentuale(domandeCorrette, domandeTotali);
-    // Aggiornare il testo della percentuale nel tuo HTML
-    document.getElementById('testo').textContent = `${percentuale}%`;
-    // Qui puoi anche aggiungere altre azioni come reindirizzare l'utente alla pagina dei risultati
-    window.location.href = "./results.html";
-} */
