@@ -123,16 +123,20 @@ var punteggio = 0;
 var risposteErrate = 10 - punteggio;
 var indiceDomandaCorrente = 0;
 var intervalId; 
+var domandeCorrette = 0, domandeTotali = questions.length;
 
-window.onload=function(){
-  document.getElementById("risposte").addEventListener("click", function () {
-    rispostaAlClick();
-    console.log(indiceDomandaCorrente);
-  })
+document.addEventListener("DOMContentLoaded", function() {
+  let btnRisposte = document.getElementById("risposte")
+  if (btnRisposte) {
+    btnRisposte.addEventListener("click", function () {
+      rispostaAlClick();
+      console.log(indiceDomandaCorrente);
+  }); 
+  } else {
+    console.log("errore")
+  }
   mostraDomanda(indiceDomandaCorrente);
-}
-
-
+});
 
 
 /******** DICHIARAZIONE FUNZIONI TIMER **********/
@@ -206,6 +210,7 @@ function mostraDomanda(index) {
   num_domanda.innerHTML = text;
   clearInterval(intervalId);
   timer();
+
 }
 
 // Funzione per randomizzare un array in modo casuale
@@ -217,17 +222,13 @@ function shuffleArray(array) {
   return array;
 }
 
-
-  // Reset del timer ad ogni nuova domanda
-
-
-
 // funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
 function rispostaAlClick() {
   
   calcolaPunteggio();
   if (indiceDomandaCorrente === questions.length) {
-    window.location.href = "././results.html";
+    window.location.href = "././results.html?corrette=" + domandeCorrette + "&totali=" + domandeTotali;
+    mostraRisultati ();
     return;
   }
   indiceDomandaCorrente++;
@@ -248,5 +249,17 @@ function calcolaPunteggio() {
   } else {
     console.log("uncorrect");
   }
-  console.log((punteggio / 10) * 100 + "%");
+  domandeCorrette = punteggio;
+  console.log((domandeCorrette / domandeTotali) * 100 + "%");
 }
+function mostraRisultati () {
+  const parametriURL = new URLSearchParams (window.location.search);
+  const domandeCorrette = parseInt (parametriURL.get("corrette"));
+  const domandeTotali = parseInt (parametriURL.get("totali"));
+  let punteggioDomandeCorrette = document.querySelector(".sx");
+  let punteggioDomandeSbagliate = document.querySelector(".dx");
+  punteggioDomandeCorrette.innerHTML = `<h3>${domandeCorrette}</h3>`;
+  punteggioDomandeSbagliate.innerHTML = `<h3>${domandeTotali}</h3>`;
+}
+
+//-----------------------------CALCOLO PUNTEGGIO-------------------------------------------------------//
