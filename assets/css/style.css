@@ -15,11 +15,12 @@ body {
 }
 
 .container {
-    padding: 0%, 4%;
-    margin: 6%;
+    padding: 0% 4%;
+    margin: 2% 6%;
     max-width: 100%;
     min-width: 3rem;
     width: fit-content;
+    align-items: center;
 }
 
 .epilogo {
@@ -79,6 +80,7 @@ ul, p, label {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5%;
 
 }
 
@@ -138,11 +140,39 @@ h1 .sinistra {
 /*Benchmark*/
 
 /* contenitore risposte a bottone */
-#container { 
-    max-width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
+
+#form_domande {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5%;
 }
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.bottoneRisposte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px; 
+    font-size: 22px;
+    border-radius: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0; 
+}
+
+.bottoneRisposte:hover {
+    background-color: #c52467;
+}
+
 
 .timer-container {
     width: 150px;
@@ -152,8 +182,8 @@ h1 .sinistra {
 }
 
 .timer {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
 }
 
 .progress {
@@ -161,7 +191,7 @@ h1 .sinistra {
     stroke: #d92792; 
     stroke-width: 10;
     stroke-dasharray: 283; 
-    stroke-dashoffset: 283;
+    stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear; 
     stroke-linecap: round;
     transform-origin: center;
@@ -177,7 +207,7 @@ h1 .sinistra {
 }
 
 #sei_arrivato {
-    margin-top: 18%;
+    margin-top: 10%; 
     width: 300px;
     height: 300px;
 }
@@ -190,7 +220,6 @@ h1 .sinistra {
     stroke-dasharray: 283; 
     stroke-dashoffset: 50;  
 }
-
 
 .time {
     font-size: 36px; 
@@ -225,17 +254,15 @@ h1 .sinistra {
     color: white;
 }
 
-.sx {
-    
+.sx .dx {
+    width: 20%;
+    display: flex;
 }
 
-.dx {
-    float: right;
-}
 
 #risposte{
     align-items:end;
--
+    
 }
 
 #form_domande h3 {
@@ -244,21 +271,20 @@ h1 .sinistra {
     text-wrap: wrap;
     text-overflow: clip;
     width: fit-content;
-    margin-bottom: 15vh;
 }
 
 .bottoneRisposte,.bottoneRisposte::after{
-    background-color: rgba(46, 50, 72, 0.47);
+    background-color: rgba(46, 50, 72, 0.7);
     max-width: 10rem;
     width: 100%;
     margin: 0.8rem;
-    margin-top: 0.3rem;
     padding-inline: 7rem;
-    padding-top: 4rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 1%;
     color: white;
-    border-color: white;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 50px;
-    text-wrap: nowrap;
 }
 
 #risposte button {
@@ -279,10 +305,10 @@ div .contenitoreRisposte{
     margin-right: auto;
 }
 footer *{
-    margin-top: 50%;
+    margin-top: 5%;
 }
 
-footer .next{
+footer > .next button{
     background-color: transparent;
     margin: 0;
     margin-top: 30%;
@@ -323,9 +349,7 @@ footer .centrato {
     height: 100px;
     border-radius: 50%;
 }
-#form_domande{
-    margin: 18vh 0;
-}
+
 
 header .container  img {
     text-align: left;
@@ -349,7 +373,7 @@ header h1, header h2 {
 
 /*----------RESULTS PAGE------------------------*/
 
-#rate_us{
+.rate_us{
     background-color:transparent;
     color: rgb(255, 255, 255);
     border: 2px solid;
@@ -439,32 +463,42 @@ cursor: pointer;
 .star-rating input[type="radio"]:checked ~ label {
 color: #31e4e4; 
 }
+
 .feedback-input {
-margin-top: 20px;
-padding: 10px; 
-width: fit-content; 
-max-width: 100%; 
-border: none; 
-border-radius: 3px;
-outline: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 15%; 
+    border-bottom: 2px solid #D20094;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    appearance: none; 
+    -webkit-appearance: none; 
+    overflow: auto; 
 }
-.submit-btn {
-text-align: center;
-margin-left: 45%;
-margin-right: 45%;
-margin-top: 20px; 
-padding: 15px 15px;
-padding-left: 30px;
-padding-right: 10px; 
-border: none; 
-border-radius: 5px; 
-background-color: #49faf1e7; 
-color: white; 
-cursor: pointer; 
-font-size: 16px; 
+
+.feedback-input::placeholder {
+    width: 100%;
+    font-size: 16px;
+    color: #bbb; 
 }
-.submit-btn:hover {
-background-color: #76dde0;
+
+#btnfeedback {
+    background-color:#12e1eb;
+    color: black;
+    border: none;
+    padding: 3% 7%;
+    margin-top: 4%;
+    font-weight: bold;
+} 
+
+#textbox {
+    text-align: center;
 }
 
 .tratto{
@@ -478,11 +512,7 @@ padding-bottom: 0px;
 margin-bottom: 0px;
 }
 
-.feedback-input{
-background-color: transparent;
-width: 90%;
-color: white;
-}
+
 
 /* TIMER */
 
