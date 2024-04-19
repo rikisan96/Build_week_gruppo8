@@ -122,7 +122,7 @@ const questions = [
 var punteggio = 0;
 var risposteErrate = 10 - punteggio;
 var indiceDomandaCorrente = 0;
-var intervalId; // Variabile per memorizzare l'ID dell'intervallo
+var intervalId; 
 
 window.onload=function(){
   document.getElementById("risposte").addEventListener("click", function () {
@@ -135,7 +135,8 @@ window.onload=function(){
 
 
 
-/******** DICHIARAZIONE FUNZIONI **********/
+/******** DICHIARAZIONE FUNZIONI TIMER **********/
+
 
 function timer() {
   let i, text;
@@ -143,18 +144,21 @@ function timer() {
   i = 60;
   text = document.querySelector("#time");
   const progressElement = document.querySelector('.progress');
+  const defaultColor = '#d92792'; 
   intervalId = setInterval(function () {
     if (i >= 0) {
       text.innerHTML = i;
       const progress = (1 - i / tempo) * 283;
       progressElement.style.strokeDashoffset = progress;
-
-    } else {
-      clearInterval(intervalId);
       if (i <= 15) {
         progressElement.style.stroke = 'red';
+      } else {
+        progressElement.style.stroke = defaultColor;
       }
-
+    } else {
+      clearInterval(intervalId);
+    
+      progressElement.style.stroke = defaultColor;
       if (indiceDomandaCorrente === questions.length - 1) {
         window.location.href = "./results.html";
         return;
@@ -171,9 +175,10 @@ function timer() {
 }
 
 
-// funzione mostra domanda nel box
+//--------------------------------- funzione mostra domanda nel box------------------------//
+
 function mostraDomanda(index) {
-  let contenitoreDomanda, domandaHTML, contenitoreRisposta, rispostaHTML;
+  let contenitoreDomanda, domandaHTML, contenitoreRisposta, risposte;
   let num_domanda, text;
 
   contenitoreDomanda = document.getElementById("form_domande");
@@ -183,25 +188,39 @@ function mostraDomanda(index) {
     return;
   }
 
-  domandaHTML = `<h3> ${questions[index].question}</h3>`;
+  domandaHTML = `<h3>${questions[index].question}</h3>`;
   contenitoreDomanda.innerHTML = domandaHTML;
   contenitoreRisposta = document.getElementById("container");
-  rispostaHTML = "";
 
-  for (let i = 0; i < questions[index].incorrect_answers.length; i++) {
-    rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].incorrect_answers[i]}</a>`;
+  risposte = [...questions[index].incorrect_answers, questions[index].correct_answer];
+  risposte = shuffleArray(risposte);
+
+  let rispostaHTML = "";
+  for (let i = 0; i < risposte.length; i++) {
+    rispostaHTML += `<a class="bottoneRisposte">${risposte[i]}</a>`;
   }
-  rispostaHTML += `<a class="bottoneRisposte"> ${questions[index].correct_answer}</a>`;
   contenitoreRisposta.innerHTML = rispostaHTML;
 
   num_domanda = document.querySelector(".centrato");
   text = `<p>QUESTION ${index + 1}<span id="numeroDomande"> / ${questions.length}</span></p>`;
   num_domanda.innerHTML = text;
-
-  // Reset del timer ad ogni nuova domanda
-  clearInterval(intervalId); // Interrompiamo l'intervallo precedente
+  clearInterval(intervalId);
   timer();
 }
+
+// Funzione per randomizzare un array in modo casuale
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+
+  // Reset del timer ad ogni nuova domanda
+
+
 
 // funzione per salvare la risposta cliccata e cambiare domanda quando si clicca una risposta
 function rispostaAlClick() {
