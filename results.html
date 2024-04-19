@@ -27,19 +27,24 @@
                     Check your email (including promotions / spam folder)</h6>
                 </div>
             </div>
-        </section>
-        <div class="punteggio sx">
-            <h2>Percentuale domande corrette</h2>
-        </div>
-        <div class="punteggio dx">
-            <h2>Percentuale domande sbagliate</h2>
-        </div>
-        <footer class="centrato">
-            <div>
-                <a href="./Feedback_page.html"><button class="rate_us">RATE US!</button></a>
-            </div>
-        </footer> 
+
+
+    </section>
+    <div class="punteggio sx">
+        <label for="percentuale correct">Correct:</label>
+        <output id="percentualeCorrect"></output><br>
+        <output id="domandeCorette/domandeTotale"></output>
     </div>
-    <script src="./scripts/script.js"></script>
+    <div class="punteggio dx">
+        <label for="percentuale sbagliate">Wrong:</label>
+        <output id="percentualeSbagliate"></output><br>
+        <output id="domandeSbagliate/domandeTotale"></output>
+    </div>
+    <footer class="centrato">
+        <div>
+            <a href="./Feedback_page.html"><button class="next rate_us" id="rate_us">RATE US!</button></a>
+        </div>
+        <script src="./scripts/script.js"></script>
+    </footer>   
 </body>
 </html>
