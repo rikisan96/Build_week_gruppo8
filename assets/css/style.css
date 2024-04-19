@@ -12,6 +12,8 @@ body {
     background-attachment: fixed;
     font-family: 'Outfit' , 'Inter', sans-serif;
     font-size: 16px;
+    
+    
 }
 
 .container {
@@ -223,14 +225,25 @@ h1 .sinistra {
 }
 
 .punteggio {
-    color: white;
+    font-size: 35px;
+    position: absolute;
+    font-weight: bold;
+    
+
 }
 
 .sx {
+    left:25% ;
+    transform: translateX(-50%);
+    float: left;
+    top: 500px;
     
 }
 
 .dx {
+    right: 25%;
+    top: 500px;
+    color: #da73b1;
     float: right;
 }
 
