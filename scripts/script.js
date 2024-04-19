@@ -181,6 +181,7 @@ function timer() {
 
 //--------------------------------- funzione mostra domanda nel box------------------------//
 
+
 function mostraDomanda(index) {
   let contenitoreDomanda, domandaHTML, contenitoreRisposta, risposte;
   let num_domanda, text;
@@ -189,6 +190,7 @@ function mostraDomanda(index) {
 
   if (index >= questions.length) {
     window.location.href = "././results.html";
+    cambiaPunteggio()
     return;
   }
 
@@ -227,11 +229,12 @@ function rispostaAlClick() {
   
   calcolaPunteggio();
   if (indiceDomandaCorrente === questions.length) {
-    window.location.href = "././results.html?corrette=" + domandeCorrette + "&totali=" + domandeTotali;
+    // window.location.href = "././results.html?corrette=" + domandeCorrette + "&totali=" + domandeTotali;
     mostraRisultati ();
     return;
   }
   indiceDomandaCorrente++;
+
   mostraDomanda(indiceDomandaCorrente);
 
   console.log("funziona");
@@ -251,15 +254,27 @@ function calcolaPunteggio() {
   }
   domandeCorrette = punteggio;
   console.log((domandeCorrette / domandeTotali) * 100 + "%");
+
+  // if (indiceDomandaCorrente === 10 )
+  // {
+  //   alert("Il punteggio delle domande correte è: " + domandeCorrette)
+  // circeBar = document.querySelector("#cerchioBiancoScore")
+  // let progressoDomande = rispostaCorretta / 10;
+  // for (let i = 0; i < rispostaCorretta; i++) {
+  //   
+    
+  // }
 }
-function mostraRisultati () {
-  const parametriURL = new URLSearchParams (window.location.search);
-  const domandeCorrette = parseInt (parametriURL.get("corrette"));
-  const domandeTotali = parseInt (parametriURL.get("totali"));
-  let punteggioDomandeCorrette = document.querySelector(".sx");
-  let punteggioDomandeSbagliate = document.querySelector(".dx");
-  punteggioDomandeCorrette.innerHTML = `<h3>${domandeCorrette}</h3>`;
-  punteggioDomandeSbagliate.innerHTML = `<h3>${domandeTotali}</h3>`;
-}
+
+
+// function mostraRisultati () {
+//   const parametriURL = new URLSearchParams (window.location.search);
+//   const domandeCorrette = parseInt (parametriURL.get("corrette"));
+//   const domandeTotali = parseInt (parametriURL.get("totali"));
+//   let punteggioDomandeCorrette = document.querySelector(".sx");
+//   let punteggioDomandeSbagliate = document.querySelector(".dx");
+//   punteggioDomandeCorrette.innerHTML = `<h3>${domandeCorrette}</h3>`;
+//   punteggioDomandeSbagliate.innerHTML = `<h3>${domandeTotali}</h3>`;
+// }
 
 //-----------------------------CALCOLO PUNTEGGIO-------------------------------------------------------//
