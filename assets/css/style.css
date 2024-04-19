@@ -267,9 +267,20 @@ h1 .sinistra {
 
 }
 
-.sx .dx {
-    width: 20%;
-    display: flex;
+.punteggio {
+    font-size: 35px;
+    position: absolute;
+    font-weight: bold;
+    
+
+}
+
+.sx {
+    left:25% ;
+    transform: translateX(-50%);
+    float: left;
+    top: 500px;
+    
 }
 
 .dx {
